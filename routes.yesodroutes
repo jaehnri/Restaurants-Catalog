@@ -1,0 +1,4 @@
+/               HomeR        GET
+/add/#Int/#Int  AddR         GET
+/videos         VideosR      GET
+/contato        ContatoR     GET
