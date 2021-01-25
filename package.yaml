@@ -4,6 +4,11 @@ version: "0.0.0"
 dependencies:
 - base
 - yesod-core
+- yesod
+- persistent-postgresql
+- text >= 1.2.4.0
+- monad-logger >= 0.3.36
+- yesod-static >= 1.6.1.0
 
 # The library contains all of our application code. The executable
 # defined below is just a thin wrapper.
