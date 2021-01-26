@@ -20,6 +20,8 @@ import Yesod
 import Data.Text
 import Database.Persist.Postgresql
 import Yesod.Static
+import Yesod.Auth
+import Yesod.Auth.Dummy -- just for testing, don't use in real life!!!
 
 staticFiles "static"
 
@@ -35,7 +37,46 @@ data App = App {connPool :: ConnectionPool, getStatic :: Static}
 
 mkYesodData "App" $(parseRoutesFile "routes.yesodroutes")
 
-instance Yesod App
+instance Yesod App where
+    makeSessionBackend _ = do
+        backend <- defaultClientSessionBackend 1 "keyfile.aes"
+        return $ Just backend
+    authRoute _ = Just $ AuthR LoginR
+        
+    -- route name, then a boolean indicating if it's a write request
+    isAuthorized HomeAuthR True = isAdmin
+    isAuthorized AdminR _ = isAdmin
+    isAuthorized ListRestaurantsR _ = isUser
+    -- qualquer um pode acessar outras páginas
+    isAuthorized _ _ = return Authorized
+
+isAdmin = do
+    mu <- maybeAuthId
+    return $ case mu of
+        Nothing -> AuthenticationRequired
+        Just "admin" -> Authorized
+        Just _ -> Unauthorized "Você deve ser um admin."
+
+isUser = do
+    mu <- maybeAuthId
+    return $ case mu of
+        Nothing -> AuthenticationRequired
+        Just "user" -> Authorized
+        Just _ -> Unauthorized "Você deve ser um usuário."
+
+-- sinonimo para o tipo do applicative form
+type Form a = Html -> MForm Handler (FormResult a, Widget)
+
+instance YesodAuth App where
+    type AuthId App = Text
+    authenticate = return . Authenticated . credsIdent
+
+    loginDest _ = HomeAuthR
+    logoutDest _ = HomeR
+
+    authPlugins _ = [authDummy]
+
+    maybeAuthId = lookupSession "_ID"
 
 instance RenderMessage App FormMessage where
     renderMessage _ _ = defaultFormMessage
