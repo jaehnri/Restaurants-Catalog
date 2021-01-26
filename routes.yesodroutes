@@ -3,6 +3,7 @@
 /restaurants                        ListRestaurantsR    GET
 /restaurant/#RestaurantId           RestaurantR         GET POST
 !/restaurant/create                 CreateRestaurantR   GET POST
+/sessao                             SessaoR             GET POST
 /videos                             VideosR             GET
 /rlist                              RlistR              GET
 /static                             StaticR Static getStatic

@@ -24,3 +24,4 @@ main = runStdoutLoggingT $ withPostgresqlPool connStr 10 $ \pool -> liftIO $ do
        port <- getEnv "PORT"
        let portInt = read port
        warp portInt (App pool static)
+       --warp 3000 (App pool static)
