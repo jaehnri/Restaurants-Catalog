@@ -31,7 +31,7 @@ Restaurant
     deriving Show
 |]
 
-data App = App{connPool :: ConnectionPool, getStatic :: Static}
+data App = App {connPool :: ConnectionPool, getStatic :: Static}
 
 mkYesodData "App" $(parseRoutesFile "routes.yesodroutes")
 

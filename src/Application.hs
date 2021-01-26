@@ -11,7 +11,7 @@ import Yesod.Core
 import Add
 import Home
 import Videos
-import Contato
+import Rlist
 
 import Handler.Restaurant.Restaurant
 import Handler.Restaurant.CreateRestaurant

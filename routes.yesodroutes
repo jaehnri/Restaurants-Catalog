@@ -4,4 +4,5 @@
 /restaurant/#RestaurantId           RestaurantR         GET POST
 !/restaurant/create                 CreateRestaurantR   GET POST
 /videos                             VideosR             GET
-/contato                            ContatoR            GET
+/rlist                              RlistR              GET
+/static                             StaticR Static getStatic

@@ -116,8 +116,8 @@ widgetCss =
             }
 
             video{
-                width: 50%;
-                height: 50%;
+                width: 100%;
+                height: 100%;
             }
 
             .texto{
@@ -129,14 +129,14 @@ widgetCss =
                 max-width: 80%;
             }
 
-            #img1{
-                width: 30%;
+            .img1{
+                width: 50%;
                 height: auto;
             }
 
-            #img2{
+            .img2{
                 width: 50%;
-                height: 10%;
+                height: auto;
             }
         |]
 
@@ -158,7 +158,7 @@ widgetHeader =
             <div .navbar>
                 <a href=@{HomeR}>Home
                 <a href=@{VideosR}>Vídeos
-                <a href=@{ContatoR}>Contato
+                <a href=@{RlistR}>Lista de Restaurantes
         |]
 
 widgetFooter :: Widget

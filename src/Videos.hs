@@ -19,8 +19,8 @@ getVideosR =
                 ^{widgetHeader}              
                 <div .main>
                     <h2>Vídeo de teste
-                    <h5>9 de Junho, 2020
+                    <h5>25 de Janeiro, 2020
                     <video controls>
-                        <source src="" type="video/mp4">
+                        <source src=@{StaticR videoteste_mp4} type="video/mp4">
                 ^{widgetFooter}
         |]
