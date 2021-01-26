@@ -17,11 +17,11 @@ main::IO    ()
 main = runStdoutLoggingT $ withPostgresqlPool connStr 10 $ \pool -> liftIO $ do
        liftIO $ putStrLn "teste"
        flip runSqlPersistMPool pool $ do
-              runMigration migrateAll
-              let restaurantId = (toSqlKey 2 :: Key Restaurant)
-              restaurant <- get restaurantId
-              liftIO $ print restaurant
-              port <- getEnv "PORT"
-              let portInt = read port
+           runMigration migrateAll
+           let restaurantId = (toSqlKey 2 :: Key Restaurant)
+           restaurant <- get restaurantId
+           liftIO $ print restaurant
        static@(Static settings) <- static "static"
-       warp port (App pool static)
+       port <- getEnv "PORT" 
+       let portInt = read port
+       warp portInt (App pool static)
