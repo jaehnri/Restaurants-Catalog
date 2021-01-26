@@ -13,4 +13,8 @@ import Home
 import Videos
 import Contato
 
+import Handler.Restaurant.Restaurant
+import Handler.Restaurant.CreateRestaurant
+import Handler.Restaurant.ListRestaurants
+
 mkYesodDispatch "App" resourcesApp
