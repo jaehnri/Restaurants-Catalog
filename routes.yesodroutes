@@ -1,4 +1,7 @@
-/               HomeR        GET
-/add/#Int/#Int  AddR         GET
-/videos         VideosR      GET
-/contato        ContatoR     GET
+/                                   HomeR               GET
+/add/#Int/#Int                      AddR                GET
+/restaurants                        ListRestaurantsR    GET
+/restaurant/#RestaurantId           RestaurantR         GET POST
+!/restaurant/create                 CreateRestaurantR   GET POST
+/videos                             VideosR             GET
+/contato                            ContatoR            GET
