@@ -46,7 +46,7 @@ instance Yesod App where
     -- route name, then a boolean indicating if it's a write request
     isAuthorized HomeAuthR True = isAdmin
     isAuthorized AdminR _ = isAdmin
-    isAuthorized ListRestaurantsR _ = isUser
+    isAuthorized ListRestaurantsR _ = isUser 
     -- qualquer um pode acessar outras páginas
     isAuthorized _ _ = return Authorized
 

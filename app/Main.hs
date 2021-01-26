@@ -22,7 +22,7 @@ main = runStdoutLoggingT $ withPostgresqlPool connStr 10 $ \pool -> liftIO $ do
            restaurant <- get restaurantId
            liftIO $ print restaurant
        static@(Static settings) <- static "static"
-       --port <- getEnv "PORT"
-       --let portInt = read port
-       --warp portInt (App pool static)
-       warp 3000 (App pool static)
+       port <- getEnv "PORT"
+       let portInt = read port
+       warp portInt (App pool static)
+       --warp 3000 (App pool static)
