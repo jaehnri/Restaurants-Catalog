@@ -18,7 +18,13 @@ getRestaurantR restaurantId = do
         <div .main>
             <h2>Restaurantes
             <p>
-                #{show restaurant}
+                Nome: #{show $ restaurantName restaurant}
+                <br>
+                Endereço: #{show $ restaurantAddress restaurant}
+                <br>
+                Nota: #{show $ restaurantRating restaurant}
+                <br>
+                ID: #{show $ restaurantId}
             <a href=@{RlistR}>Voltar
         |]
         widgetFooter

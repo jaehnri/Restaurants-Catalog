@@ -59,8 +59,14 @@ postCreateRestaurantR = do
                 <div .main>
                     <h2>Restaurente Criado
                     <p>
-                        #{show restaurant}
-                    <p>
-                        The ID of the new Restaurant is #{show restaurantId}
+                        Nome: #{show $ restaurantName restaurant}
+                        <br>
+                        Endereço: #{show $ restaurantAddress restaurant}
+                        <br>
+                        Nota: #{show $ restaurantRating restaurant}
+                        <br>
+                        ID: #{show restaurantId}
+                        <br>
+                    <a href=@{RlistR}>Voltar
             ^{widgetFooter}
         |]

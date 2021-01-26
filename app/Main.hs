@@ -11,7 +11,8 @@ import Control.Monad.IO.Class (liftIO)
 
 import System.Environment (getEnv)
 
-connStr = "dbname=da2vcje9kn8d3k host=ec2-54-205-248-255.compute-1.amazonaws.com user=fpappocyxjdfru password=d8a2dc271c49c6abec494c60bb1ea0116423f0bfc609e4491e13944c97bc847c port=5432"
+connStr = "dbname=joao host=localhost user=verao password=hegel port=5432"
+--connStr = "dbname=da2vcje9kn8d3k host=ec2-54-205-248-255.compute-1.amazonaws.com user=fpappocyxjdfru password=d8a2dc271c49c6abec494c60bb1ea0116423f0bfc609e4491e13944c97bc847c port=5432"
 main::IO    ()
 main = runStdoutLoggingT $ withPostgresqlPool connStr 10 $ \pool -> liftIO $ do
        liftIO $ putStrLn "teste"
@@ -21,7 +22,7 @@ main = runStdoutLoggingT $ withPostgresqlPool connStr 10 $ \pool -> liftIO $ do
            restaurant <- get restaurantId
            liftIO $ print restaurant
        static@(Static settings) <- static "static"
-       port <- getEnv "PORT"
-       let portInt = read port
-       warp portInt (App pool static)
-       --warp 3000 (App pool static)
+       --port <- getEnv "PORT"
+       --let portInt = read port
+       --warp portInt (App pool static)
+       warp 3000 (App pool static)
