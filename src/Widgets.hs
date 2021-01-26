@@ -152,7 +152,7 @@ widgetHeader =
     toWidget
         [hamlet|
             <div .header>
-                <h1> Trabalho Framework Web YESOD
+                <h1> Trabalho com Framework Web YESOD
                 <p> Página criada para o curso de Haskell e Yesod
             
             <div .navbar>
