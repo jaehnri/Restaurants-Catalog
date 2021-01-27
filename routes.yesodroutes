@@ -5,6 +5,10 @@
 !/restaurant/create                 CreateRestaurantR   GET POST
 !/restaurant/remove/#RestaurantId   RemoveRestaurantR   GET POST
 !/restaurant/update/#RestaurantId   UpdateRestaurantR   GET POST
+
+/food/#FoodId                       FoodR               GET POST
+!/foods/#RestaurantId               ListFoodR           GET
+!/food/create/#RestaurantId         CreateFoodR         GET POST
 /sessao                             SessaoR             GET POST
 /home-auth                          HomeAuthR           GET POST
 /videos                             VideosR             GET

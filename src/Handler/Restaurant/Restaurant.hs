@@ -30,6 +30,10 @@ getRestaurantR restaurantId = do
             <a href=@{UpdateRestaurantR restaurantId}>Atualizar
 
             <a href=@{RemoveRestaurantR restaurantId}>Remover
+            <br>
+            <a href=@{CreateFoodR restaurantId}>Adicionar Comida
+
+            <a href=@{ListFoodR restaurantId}>Ver Comidas
         |]
         widgetFooter
 
