@@ -11,7 +11,7 @@ getAdminR = defaultLayout
     [whamlet|
         <p>
             Você é Admin!
-        <p>
-            <a href=@{HomeAuthR}>
-                Retornar à página HOME.
+
+            <a href=@{HomeAuthR}>Voltar
+            <a href=@{SessaoR}>Ver sessões
     |]

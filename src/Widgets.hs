@@ -159,6 +159,7 @@ widgetHeader =
                 <a href=@{HomeR}>Home
                 <a href=@{VideosR}>Vídeos
                 <a href=@{RlistR}>Lista de Restaurantes
+                <a href=@{HomeAuthR}>Login
         |]
 
 widgetFooter :: Widget
