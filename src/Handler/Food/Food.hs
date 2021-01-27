@@ -26,7 +26,7 @@ getFoodR foodId = do
                 <br>
                 ID: #{show $ foodId}
 
-            <a href=@{RlistR}>Remover (TODO)
+            <a href=@{RemoveFoodR foodId}>Remover
             <br>
             <a href=@{RlistR}>Voltar
         |]

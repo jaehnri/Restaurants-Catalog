@@ -9,6 +9,8 @@
 /food/#FoodId                       FoodR               GET POST
 !/foods/#RestaurantId               ListFoodR           GET
 !/food/create/#RestaurantId         CreateFoodR         GET POST
+!/food/remove/#FoodId               RemoveFoodR         GET POST
+
 /sessao                             SessaoR             GET POST
 /home-auth                          HomeAuthR           GET POST
 /videos                             VideosR             GET

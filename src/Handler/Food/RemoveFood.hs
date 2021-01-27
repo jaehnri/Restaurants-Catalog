@@ -6,7 +6,7 @@
 {-# LANGUAGE QuasiQuotes           #-}
 {-# LANGUAGE TemplateHaskell       #-}
 {-# LANGUAGE TypeFamilies          #-}
-module Handler.Restaurant.RemoveRestaurant where
+module Handler.Food.RemoveFood where
 
 import Foundation
 import Yesod.Core
@@ -15,10 +15,10 @@ import Control.Applicative
 import Data.Text (Text)
 import Widgets
 
-getRemoveRestaurantR :: RestaurantId -> Handler Html
-getRemoveRestaurantR rid = do
-    restaurant <- runDB $ get404 rid
-    runDB $ delete rid
+getRemoveFoodR :: FoodId -> Handler Html
+getRemoveFoodR foodId = do
+    food <- runDB $ get404 foodId
+    runDB $ delete foodId
     defaultLayout $ do
         widgetHead
         widgetCss
@@ -27,11 +27,11 @@ getRemoveRestaurantR rid = do
             <body>
             <div .main>
                 <p>
-                    Restaurante removido com sucesso.
+                    Comida removida com sucesso.
                 <p>
                     <a href=@{RlistR}>Voltar
             ^{widgetFooter}
         |]
 
-postRemoveRestaurantR :: RestaurantId -> Handler Html
-postRemoveRestaurantR = undefined
+postRemoveFoodR :: FoodId -> Handler Html
+postRemoveFoodR = undefined
