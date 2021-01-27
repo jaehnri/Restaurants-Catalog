@@ -50,11 +50,12 @@ instance Yesod App where
     authRoute _ = Just $ AuthR LoginR
         
     -- route name, then a boolean indicating if it's a write request
-    isAuthorized HomeAuthR True = isAdmin
     isAuthorized AdminR _ = isAdmin
-    isAuthorized ListRestaurantsR _ = isUser 
+    isAuthorized CreateRestaurantR _ = isAdmin
+    isAuthorized ListRestaurantsR _ = isLogged
     -- qualquer um pode acessar outras páginas
     isAuthorized _ _ = return Authorized
+
 
 isAdmin = do
     mu <- maybeAuthId
@@ -63,12 +64,12 @@ isAdmin = do
         Just "admin" -> Authorized
         Just _ -> Unauthorized "Você deve ser um admin."
 
-isUser = do
+isLogged = do
     mu <- maybeAuthId
     return $ case mu of
         Nothing -> AuthenticationRequired
-        Just "user" -> Authorized
-        Just _ -> Unauthorized "Você deve ser um usuário."
+        Just "admin" -> Authorized
+        Just _ -> Authorized
 
 -- sinonimo para o tipo do applicative form
 type Form a = Html -> MForm Handler (FormResult a, Widget)

@@ -14,16 +14,18 @@ getHomeAuthR = do
     defaultLayout
         [whamlet|
             <p>Observação: Logue como "admin" para ser um administrador.
+            <p>Apenas admins podem adicionar restaurantes à lista.
+            <p>Qualquer um logado pode visualizar a lista. 
             <p>Seu atual auth ID: #{show maid}
             $maybe _ <- maid
                 <p>
                     <a href=@{AuthR LogoutR}>Logout
-            <p>
+                <p>
                 <a href=@{AdminR}>Ir para a página de Admin
-            <form method=post>
-               Faça uma alteração (apenas administradores)
-                \ #
-                <input type=submit>
+            $if maid == Nothing
+                <a href=@{AuthR LoginR}> Login
+            <br>
+            <a href=@{HomeR}>Voltar
         |]
 
 postHomeAuthR :: Handler Html
