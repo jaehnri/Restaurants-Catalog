@@ -23,5 +23,8 @@ import Handler.Restaurant.ListRestaurants
 import Handler.Restaurant.RemoveRestaurant
 import Handler.Restaurant.UpdateRestaurant
 
+import Handler.Food.Food
+import Handler.Food.CreateFood
+import Handler.Food.ListFood
 
 mkYesodDispatch "App" resourcesApp

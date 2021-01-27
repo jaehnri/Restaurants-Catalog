@@ -31,6 +31,12 @@ Restaurant
     address Text
     rating Int
     deriving Show
+Food
+    restaurantId RestaurantId
+    name Text
+    category Text
+    price Int
+    deriving Show
 |]
 
 data App = App {connPool :: ConnectionPool, getStatic :: Static}
