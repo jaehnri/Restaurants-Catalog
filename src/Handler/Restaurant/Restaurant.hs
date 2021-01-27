@@ -26,6 +26,8 @@ getRestaurantR restaurantId = do
                 <br>
                 ID: #{show $ restaurantId}
             <a href=@{RlistR}>Voltar
+
+            <a href=@{RemoveRestaurantR restaurantId}>Remover
         |]
         widgetFooter
 

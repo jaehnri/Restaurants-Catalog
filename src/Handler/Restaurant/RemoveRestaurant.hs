@@ -32,8 +32,6 @@ getRemoveRestaurantR rid = do
                     <a href=@{RlistR}>Voltar
             ^{widgetFooter}
         |]
-    
-    
 
 postRemoveRestaurantR :: RestaurantId -> Handler Html
 postRemoveRestaurantR = undefined
