@@ -2,8 +2,9 @@
 /add/#Int/#Int                      AddR                GET
 /restaurants                        ListRestaurantsR    GET
 /restaurant/#RestaurantId           RestaurantR         GET POST
-!/restaurant/remove/#RestaurantId   RemoveRestaurantR   GET POST
 !/restaurant/create                 CreateRestaurantR   GET POST
+!/restaurant/remove/#RestaurantId   RemoveRestaurantR   GET POST
+!/restaurant/update/#RestaurantId   UpdateRestaurantR   GET POST
 /sessao                             SessaoR             GET POST
 /home-auth                          HomeAuthR           GET POST
 /videos                             VideosR             GET

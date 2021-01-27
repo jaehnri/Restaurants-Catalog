@@ -17,9 +17,11 @@ import Sessao
 import HomeAuth
 import Admin
 
-import Handler.Restaurant.RemoveRestaurant
 import Handler.Restaurant.Restaurant
 import Handler.Restaurant.CreateRestaurant
 import Handler.Restaurant.ListRestaurants
+import Handler.Restaurant.RemoveRestaurant
+import Handler.Restaurant.UpdateRestaurant
+
 
 mkYesodDispatch "App" resourcesApp
