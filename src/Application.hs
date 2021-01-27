@@ -9,7 +9,6 @@ import Foundation
 import Yesod.Core
 import Yesod.Auth
 
-import Add
 import Home
 import Videos
 import Rlist
